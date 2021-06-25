@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koshigo - Create your account</title>
+  <link rel="shortcut icon" href="/images/fav.png" type="image/x-icon">
+  <link rel="stylesheet" href="/css/signup.css">
+</head>
+
+<body>
+  <div class="wrapper">
+
+  </div>
+  <div class="box">
+    <form action="/signup" method="post" enctype="multipart/form-data">
+      <h1>Create Account</h1>
+      <div class="sector1">
+        <div class="group">
+          <label>Your name</label>
+          <input type="text" name="name" required>
+        </div>
+        <div class="group">
+          <label>Mobile number</label>
+          <input type="tel" name="mobile" required>
+        </div>
+        <div class="group">
+          <label>Email</label>
+          <input type="email" name="email" required>
+        </div>
+        <div class="group">
+          <label>Password</label>
+          <input type="password" name="password" required>
+        </div>
+        <button type="button">Continue</button>
+        <p>Already have an account? <a href="/login">login</a></p>
+      </div>
+      <div class="sector2" style="display: none;">
+        <div class="group">
+          <label>Profile Picture</label>
+          <div class="file">
+            <span>Change</span>
+            <img>
+            <svg viewBox="0 0 496 512">
+              <path
+                d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm0 96c48.6 0 88 39.4 88 88s-39.4 88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7 0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4 0 4.8.4 7.1 1.1 13 4.2 26.6 6.9 40.9 6.9 14.3 0 28-2.7 40.9-6.9 2.3-.7 4.7-1.1 7.1-1.1 42.9 0 79.7 24.4 98.5 59.8C359.3 421.4 306.7 448 248 448z" />
+            </svg>
+            <input type="file" name="photo">
+          </div>
+        </div>
+        <button type="submit">Continue</button>
+        <button class="edit" type="button">Edit Details</button>
+      </div>
+    </form>
+    <script>
+      const profilePicInput = document.querySelector("body > div.box > form > div.sector2 > div > div")
+      const input = document.querySelector("body > div.box > form > div.sector2 > div > div > input[type=file]")
+      const img = document.querySelector("body > div.box > form > div.sector2 > div > div > img")
+
+      profilePicInput.addEventListener('click', () => {
+        input.click()
+      })
+
+      input.addEventListener('change', function () {
+        const file = this.files[0]
+        if (file) {
+          const reader = new FileReader()
+          reader.onload = function () {
+            const result = reader.result
+            img.setAttribute('src', result)
+            profilePicInput.classList.add('data')
+          }
+          reader.readAsDataURL(file)
+        }
+      })
+
+      const form = document.querySelector('form')
+      const nextBtn = document.querySelector("body > div > form > div.sector1 > button")
+      const prevBtn = document.querySelector("body > div > form > div.sector2 > button.edit")
+      const stepOne = document.querySelector("body > div > form > div.sector1")
+      const stepTwo = document.querySelector("body > div > form > div.sector2")
+      const name = document.querySelector("body > div.box > form > div.sector1 > div:nth-child(1) > input[type=text]")
+      const mobile = document.querySelector("body > div.box > form > div.sector1 > div:nth-child(2) > input[type=tel]")
+      const email = document.querySelector("body > div.box > form > div.sector1 > div:nth-child(3) > input[type=email]")
+      const password = document.querySelector("body > div.box > form > div.sector1 > div:nth-child(4) > input[type=password]")
+
+      nextBtn.addEventListener('click', () => {
+        stepOne.style.display = 'none'
+        stepTwo.style.display = 'block'
+      })
+
+      prevBtn.addEventListener('click', () => {
+        stepOne.style.display = 'block'
+        stepTwo.style.display = 'none'
+      })
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault()
+
+        const sendDataPath = form.getAttribute('action')
+        const formData = new FormData()
+
+        formData.append("name", name.value)
+        formData.append("mobile", mobile.value)
+        formData.append("email", email.value)
+        formData.append("password", password.value)
+        formData.append("profilePic", input.files[0])
+
+        const serverResponse = await fetch(sendDataPath, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          mode: "no-cors",
+          body: formData
+        });
+
+        const data = await serverResponse;
+        if (data.status != 200) {
+          const msg = await serverResponse.json();
+          alert(msg)
+        } else {
+          location.replace('/login')
+        }
+      })
+    </script>
+  </div>
+</body>
+
+</html>
