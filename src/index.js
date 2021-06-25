@@ -3,7 +3,7 @@ require('./db/conn')
 
 const express = require('express')
 const app = express()
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 8080
 const user = require('./routes/user')
 const admin = require('./routes/admin')
 const cookieParser = require('cookie-parser')
