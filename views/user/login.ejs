@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koshigo - Login to your account</title>
+  <link rel="shortcut icon" href="/images/fav.png" type="image/x-icon">
+  <link rel="stylesheet" href="/css/login.css">
+</head>
+
+<body>
+  <div class="box">
+    <a class="left" href="/">
+      <img src="/images/fav.png">
+      <span>Koshigo</span>
+    </a>
+    <form action="/login" method="post" class="right">
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+      <p>Don't have an account? <a href="/signup">Signup</a></p>
+    </form>
+
+    <script>
+      const form = document.querySelector('form')
+      const email = document.querySelector("body > div > form > input[type=email]:nth-child(1)")
+      const password = document.querySelector("body > div > form > input[type=password]:nth-child(2)")
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault()
+
+        const sendDataPath = form.getAttribute('action')
+
+        const serverResponse = await fetch(sendDataPath, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: email.value,
+            password: password.value,
+          }),
+        });
+
+        const data = await serverResponse;
+        if (data.status != 200) {
+          const msg = await serverResponse.json();
+          alert(msg)
+        } else {
+          location.replace('/')
+        }
+      })
+    </script>
+  </div>
+</body>
+
+</html>
