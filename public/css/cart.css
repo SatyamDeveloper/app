@@ -1,0 +1,863 @@
+@font-face {
+  font-family: ubuntu;
+  src: url(/fonts/Ubuntu-Regular.ttf);
+}
+
+@font-face {
+  font-family: nunito;
+  src: url(/fonts/NunitoSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: raleway;
+  src: url(/fonts/Raleway-Regular.ttf);
+}
+
+@font-face {
+  font-family: roboto;
+  src: url(/fonts/Roboto-Regular.ttf);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+img,
+svg {
+  width: 30px;
+}
+
+body {
+  width: 100%;
+  background: #f2f2f2;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9990;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+}
+
+header {
+  width: 100%;
+  height: 50px;
+  padding: 0 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #fff;
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+  font-family: ubuntu;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+header .one,
+header .two,
+header .three {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+header .one {
+  height: 100%;
+}
+
+header .one button {
+  border: none;
+  border-radius: 0;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-right: 15px;
+  background: none;
+  position: relative;
+}
+
+header .one button::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background: #ddd;
+  z-index: 0;
+  border-radius: 50%;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+}
+
+header .one button::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background: #ccc;
+  z-index: 0;
+  border-radius: 50%;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+}
+
+header .one button:hover::before,
+header .one button:focus::after {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+header .one button svg {
+  width: 50%;
+  z-index: 1;
+}
+
+header .one a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  font-weight: 600;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+header .one a img {
+  margin-right: 5px;
+}
+
+header .two {
+  -ms-flex-preferred-size: 40%;
+  flex-basis: 40%;
+  height: 68%;
+  overflow: hidden;
+}
+
+header .two input {
+  -ms-flex-preferred-size: 85%;
+  flex-basis: 85%;
+  height: 100%;
+  border: 2px solid #40407a;
+  border-radius: 2px 0 0 2px;
+  padding: 0 8px;
+  outline: none;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+header .two input:focus {
+  border-color: #182c61;
+}
+
+header .two button {
+  -ms-flex-preferred-size: 15%;
+  flex-basis: 15%;
+  height: 100%;
+  border: 2px solid #40407a;
+  border-left: none;
+  border-radius: 0 2px 2px 0;
+  border-radius: 0;
+  cursor: pointer;
+  outline: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background: #40407a;
+}
+
+header .two button svg {
+  height: 60%;
+  fill: #fff;
+}
+
+header .three {
+  -ms-flex-preferred-size: 12%;
+  flex-basis: 12%;
+  height: 100%;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+header .three a {
+  border: none;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0 8px;
+  position: relative;
+}
+
+header .three a::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background: #ddd;
+  z-index: 0;
+  border-radius: 50%;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+}
+
+header .three a::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background: #ccc;
+  z-index: 0;
+  border-radius: 50%;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+}
+
+header .three a:hover::before,
+header .three a:focus::after {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+header .three a svg {
+  width: 60%;
+  z-index: 1;
+}
+
+header .three a img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+header .three a .tooltip {
+  position: absolute;
+  top: 30%;
+  left: 60%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  width: 15px;
+  height: 15px;
+  background: red;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  z-index: 2;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+header .three a#sign {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: 42px;
+  text-decoration: none;
+  color: #40407a;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  padding: 0 5px;
+  border-width: 2px;
+  border-color: #40407a;
+  font-weight: 500;
+}
+
+header .three a#sign:hover,
+header .three a#sign:focus {
+  color: #182c61;
+  border-color: #182c61;
+}
+
+header .three a#sign::before,
+header .three a#sign::after {
+  display: none;
+}
+
+header .three a#sign svg {
+  width: 25px;
+  margin-right: 5px;
+  fill: currentColor;
+}
+
+#sidebar {
+  width: 18rem;
+  height: 100vh;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-box-shadow: 1px 0 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 1px 0 5px rgba(0, 0, 0, 0.25);
+  font-family: nunito;
+  z-index: 9999;
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+
+#sidebar .top {
+  width: 100%;
+  height: 11rem;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 10px;
+  background: #40407a;
+  color: #fff;
+}
+
+#sidebar .top img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+}
+
+#sidebar .top p#userName {
+  margin: 8px 0 3px;
+}
+
+#sidebar .top button {
+  position: absolute;
+  top: 10px;
+  left: 22px;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background: none;
+}
+
+#sidebar .top button svg {
+  width: 50%;
+  fill: #fff;
+}
+
+#sidebar .middle {
+  width: 100%;
+  padding: 5px 0;
+}
+
+#sidebar .middle a {
+  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 24px;
+  height: 40px;
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+#sidebar .middle a:hover {
+  background: #d0d0d0;
+}
+
+#sidebar .middle a.circle img {
+  border-radius: 50%;
+}
+
+#sidebar .middle a svg,
+#sidebar .middle a img {
+  width: 24px;
+  height: 24px;
+  margin-right: 24px;
+}
+
+#sidebar .middle hr {
+  margin: 5px 0;
+}
+
+#sidebar .foot {
+  margin: 5px 0;
+  padding: 0 5px;
+}
+
+#sidebar .foot p {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+main {
+  width: 100%;
+}
+
+section#cart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 24px 8rem;
+}
+
+section#cart .left,
+section#cart .right {
+  background: #fff;
+  font-family: roboto;
+}
+
+section#cart .left {
+  width: 80%;
+  margin-right: 24px;
+  padding: 20px;
+}
+
+section#cart .left h1 {
+  margin-bottom: 10px;
+}
+
+section#cart .left p.key {
+  width: 100%;
+  text-align: right;
+  color: #777;
+  padding: 0 10px;
+  font-size: 14px;
+  padding-bottom: 5px;
+}
+
+section#cart .left hr {
+  border: none;
+  border-bottom: 1px solid #ccc;
+}
+
+section#cart .left .cart_item {
+  border-bottom: 1px solid #ccc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 210px;
+}
+
+section#cart .left .cart_item a.one {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color: #000;
+}
+
+section#cart .left .cart_item a.one .img {
+  width: 12rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+section#cart .left .cart_item a.one img {
+  width: 90%;
+  height: auto;
+}
+
+section#cart .left .cart_item .two {
+  width: 60%;
+  margin: 0 20px;
+  padding: 15px 0;
+}
+
+section#cart .left .cart_item .two a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #7c68ff;
+}
+
+section#cart .left .cart_item .two a:hover {
+  color: #f55b5b;
+  text-decoration: underline;
+}
+
+section#cart .left .cart_item .two span {
+  font-size: 14px;
+}
+
+section#cart .left .cart_item .two .tools {
+  margin: 1rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+section#cart .left .cart_item .two .tools .qty {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 32px;
+  border-radius: 25px;
+}
+
+section#cart .left .cart_item .two .tools .qty button {
+  height: 100%;
+  cursor: pointer;
+  border: none;
+  background: #ddd;
+  outline: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+  overflow: hidden;
+  position: relative;
+}
+
+section#cart .left .cart_item .two .tools .qty button.ones {
+  border-radius: 25px 0 0 25px;
+}
+
+section#cart .left .cart_item .two .tools .qty button.twos {
+  border-radius: 0 25px 25px 0;
+}
+
+section#cart .left .cart_item .two .tools .qty button:hover {
+  background: #40407a;
+  fill: #fff;
+}
+
+section#cart .left .cart_item .two .tools .qty button::before {
+  z-index: 0;
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  content: "";
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%) scale(0);
+  transform: translateX(-50%) translateY(-50%) scale(0);
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 50%;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+
+section#cart .left .cart_item .two .tools .qty button:focus::before {
+  -webkit-transform: translateX(-50%) translateY(-50%) scale(1);
+  transform: translateX(-50%) translateY(-50%) scale(1);
+}
+
+section#cart .left .cart_item .two .tools .qty button svg {
+  height: 50%;
+  z-index: 1;
+}
+
+section#cart .left .cart_item .two .tools .qty input {
+  width: 70px;
+  border-radius: 0;
+  border: 2px solid #ddd;
+  padding: 0 10px;
+  outline: none;
+  font-size: 16px;
+}
+
+section#cart .left .cart_item .two .tools .qty input:focus {
+  border-color: #40407a;
+}
+
+section#cart .left .cart_item .two .tools button.delete {
+  outline: none;
+  cursor: pointer;
+  background: #ddd;
+  border: none;
+  padding: 5px 20px;
+  font-size: 16px;
+  height: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+section#cart .left .cart_item .two .tools button.delete:hover > svg,
+section#cart .left .cart_item .two .tools button.delete:focus > svg {
+  fill: red;
+}
+
+section#cart .left .cart_item .two .tools button.delete svg {
+  width: 16px;
+}
+
+section#cart .left .cart_item .two .tools .seperate {
+  width: 1px;
+  height: 18px;
+  background: #ddd;
+  margin: 0 10px;
+}
+
+section#cart .left .cart_item .three {
+  margin-left: auto;
+  padding: 10px;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+section#cart .right {
+  width: 20%;
+  padding: 15px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+
+section#cart .right p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+section#cart .right p b {
+  font-weight: 700;
+}
+
+section#cart .right button {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  margin: 15px 0;
+  height: 32px;
+  font-size: 14px;
+  border: none;
+  border-radius: 3px;
+  -webkit-transition: background-color 0.1s ease-in-out;
+  transition: background-color 0.1s ease-in-out;
+  outline: none;
+}
+
+section#cart .right button.one {
+  background: #ffd814;
+}
+
+section#cart .right button.one:hover {
+  background: #f7ca00;
+}
+
+section#cart .right button.two {
+  background: #f44336;
+  color: #fff;
+}
+
+section#cart .right button.two:hover {
+  background: #ff0000;
+}
+
+section#no-result {
+  width: 100%;
+  background: #40407a;
+  color: #fff;
+  height: auto;
+  min-height: 35rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-family: ubuntu;
+  font-size: 3rem;
+}
+
+section#no-result a {
+  text-decoration: none;
+  color: #40407a;
+  border: 2px solid #40407a;
+  background: #fff;
+  padding: 10px 30px;
+  margin-top: 2rem;
+  font-size: 1.5rem;
+}
+
+footer {
+  width: 100%;
+  background: #182c61;
+  color: #fff;
+  margin-top: auto;
+}
+
+footer .bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+footer .bottom p {
+  font-family: roboto;
+  font-size: 14px;
+}
+
+footer .bottom .connect {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%;
+}
+
+footer .bottom .connect a {
+  text-decoration: none;
+  color: currentColor;
+  margin: 0 10px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+footer .bottom .connect a svg {
+  width: 22px;
+  fill: currentColor;
+}

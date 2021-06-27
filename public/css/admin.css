@@ -1,0 +1,445 @@
+@font-face {
+  font-family: roboto;
+  src: url(../fonts/Roboto-Regular.ttf);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: roboto;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+}
+
+body header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 50px;
+  padding: 0 20px;
+  border-bottom: 1px solid #ccc;
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+}
+
+body header a {
+  text-decoration: none;
+  color: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: none;
+}
+
+body header a img {
+  width: 2rem;
+}
+
+body header a span {
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+body header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  height: 100%;
+}
+
+body header nav a {
+  height: 100%;
+  padding: 0 10px;
+  opacity: 0.9;
+}
+
+body header nav a:hover,
+body header nav a:focus {
+  opacity: 1;
+}
+
+body main {
+  width: 100%;
+}
+
+body main #notify {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem 5rem;
+}
+
+body main #notify .box {
+  width: 20rem;
+  height: 20rem;
+  border-radius: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.35);
+}
+
+body main #notify .box .head {
+  width: 100%;
+  height: 15%;
+  border-bottom: 2px solid #3949ab;
+  background: #3949ab;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 10px;
+}
+
+body main #notify .box .body {
+  height: 70%;
+  border: 2px solid #3949ab;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+body main #notify .box a {
+  width: 100%;
+  height: 15%;
+  background: #3949ab;
+  color: #fff;
+  text-decoration: none;
+  padding: 0 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+body main #notify .box a:hover,
+body main #notify .box a:focus {
+  background: #303f9f;
+}
+
+body main #edit {
+  width: 100%;
+  padding: 1rem 5rem;
+  margin-top: 2rem;
+}
+
+body main #edit h1 {
+  margin-top: 2rem;
+  font-weight: normal;
+  position: relative;
+  padding-bottom: 0.6rem;
+}
+
+body main #edit h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 15rem;
+  height: 2px;
+  background: red;
+}
+
+body main #edit form {
+  width: 100%;
+}
+
+body main #edit form .banners {
+  width: 100%;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+body main #edit form .banners .banner {
+  width: 100%;
+  background: rgba(57, 72, 171, 0.2);
+  margin: 1rem 0;
+  overflow: hidden;
+  height: 30rem;
+  position: relative;
+  cursor: pointer;
+  border: 6px dashed #3949ab;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition: background-color 0.1s ease;
+  transition: background-color 0.1s ease;
+}
+
+body main #edit form .banners .banner:hover {
+  background: rgba(57, 72, 171, 0.4);
+}
+
+body main #edit form .banners .banner.data {
+  border-style: solid;
+}
+
+body main #edit form .banners .banner.data img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+body main #edit form .banners .banner.data svg {
+  display: none;
+}
+
+body main #edit form .banners .banner.data:hover > span {
+  opacity: 1;
+}
+
+body main #edit form .banners .banner span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  opacity: 0;
+}
+
+body main #edit form .banners .banner svg {
+  width: 5rem;
+}
+
+body main #edit form .banners .banner img {
+  width: 100%;
+  height: auto;
+  display: none;
+}
+
+body main #edit form .banners .banner input {
+  display: none;
+}
+
+body main #edit form .categories .category {
+  margin: 2rem;
+  width: 17rem;
+  display: inline-block;
+}
+
+body main #edit form .categories .category .pic {
+  background: rgba(57, 72, 171, 0.2);
+  border: 6px dashed #3949ab;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+  height: 15rem;
+  overflow: hidden;
+}
+
+body main #edit form .categories .category .pic img {
+  display: none;
+}
+
+body main #edit form .categories .category .pic:hover {
+  background: rgba(57, 72, 171, 0.4);
+}
+
+body main #edit form .categories .category .pic.data {
+  border-style: solid;
+}
+
+body main #edit form .categories .category .pic.data img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+body main #edit form .categories .category .pic.data svg {
+  display: none;
+}
+
+body main #edit form .categories .category .pic.data:hover > span {
+  opacity: 1;
+}
+
+body main #edit form .categories .category .pic span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  opacity: 0;
+}
+
+body main #edit form .categories .category .pic svg {
+  width: 5rem;
+}
+
+body main #edit form .categories .category .pic input {
+  display: none;
+}
+
+body main #edit form .categories .category input {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 5px;
+  font-size: 16px;
+  outline: none;
+  border: 2px solid #ccc;
+}
+
+body main #edit form .categories .category input:focus {
+  border-color: #3949ab;
+}
+
+body main #edit form .links {
+  width: 100%;
+}
+
+body main #edit form .links .group {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+body main #edit form .links .group label {
+  width: 30%;
+  text-align: right;
+  padding: 0 20px;
+}
+
+body main #edit form .links .group input {
+  width: 50%;
+  padding: 5px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  outline: none;
+}
+
+body main #edit form .links .group input:focus {
+  border-color: #3949ab;
+}
+
+body main #edit form .btn_area {
+  margin-top: 1rem;
+  width: 100%;
+  text-align: right;
+}
+
+body main #edit form .btn_area button {
+  margin-left: 1rem;
+  padding: 0 30px;
+  height: 40px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  background: #3949ab;
+  color: #fff;
+  border: 3px solid #3949ab;
+  -webkit-transition: background-color 0.1s ease;
+  transition: background-color 0.1s ease;
+  outline: none;
+}
+
+body main #edit form .btn_area button:hover,
+body main #edit form .btn_area button:focus {
+  background: #303f9f;
+}
+
+body main #edit form .btn_area button:first-child {
+  background: red;
+  border-color: red;
+}
+
+body main #edit form .btn_area button:first-child:hover {
+  background: #e70505;
+}
+/*# sourceMappingURL=admin.css.map */

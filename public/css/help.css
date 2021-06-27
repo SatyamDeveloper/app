@@ -1,0 +1,631 @@
+@font-face {
+  font-family: ubuntu;
+  src: url(/fonts/Ubuntu-Regular.ttf);
+}
+
+@font-face {
+  font-family: nunito;
+  src: url(/fonts/NunitoSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: raleway;
+  src: url(/fonts/Raleway-Regular.ttf);
+}
+
+@font-face {
+  font-family: roboto;
+  src: url(/fonts/Roboto-Regular.ttf);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+img,
+svg {
+  width: 30px;
+}
+
+body {
+  width: 100%;
+  background: #f2f2f2;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9990;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+}
+
+header {
+  width: 100%;
+  height: 50px;
+  padding: 0 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: #fff;
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+  font-family: ubuntu;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+header .one,
+header .two,
+header .three {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+header .one {
+  height: 100%;
+}
+
+header .one button {
+  border: none;
+  border-radius: 0;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-right: 15px;
+  background: none;
+  position: relative;
+}
+
+header .one button::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background: #ddd;
+  z-index: 0;
+  border-radius: 50%;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+}
+
+header .one button::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background: #ccc;
+  z-index: 0;
+  border-radius: 50%;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+}
+
+header .one button:hover::before,
+header .one button:focus::after {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+header .one button svg {
+  width: 50%;
+  z-index: 1;
+}
+
+header .one a {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+  font-weight: 600;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+header .one a img {
+  margin-right: 5px;
+}
+
+header .two {
+  -ms-flex-preferred-size: 40%;
+  flex-basis: 40%;
+  height: 68%;
+  overflow: hidden;
+}
+
+header .two input {
+  -ms-flex-preferred-size: 85%;
+  flex-basis: 85%;
+  height: 100%;
+  border: 2px solid #40407a;
+  border-radius: 2px 0 0 2px;
+  padding: 0 8px;
+  outline: none;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+header .two input:focus {
+  border-color: #182c61;
+}
+
+header .two button {
+  -ms-flex-preferred-size: 15%;
+  flex-basis: 15%;
+  height: 100%;
+  border: 2px solid #40407a;
+  border-left: none;
+  border-radius: 0 2px 2px 0;
+  border-radius: 0;
+  cursor: pointer;
+  outline: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background: #40407a;
+}
+
+header .two button svg {
+  height: 60%;
+  fill: #fff;
+}
+
+header .three {
+  -ms-flex-preferred-size: 12%;
+  flex-basis: 12%;
+  height: 100%;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+
+header .three a {
+  border: none;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0 8px;
+  position: relative;
+}
+
+header .three a::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background: #ddd;
+  z-index: 0;
+  border-radius: 50%;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+}
+
+header .three a::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background: #ccc;
+  z-index: 0;
+  border-radius: 50%;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+}
+
+header .three a:hover::before,
+header .three a:focus::after {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+header .three a svg {
+  width: 60%;
+  z-index: 1;
+}
+
+header .three a img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+header .three a .tooltip {
+  position: absolute;
+  top: 30%;
+  left: 60%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  width: 15px;
+  height: 15px;
+  background: red;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  z-index: 2;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+header .three a#sign {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  height: 42px;
+  text-decoration: none;
+  color: #40407a;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  padding: 0 5px;
+  border-width: 2px;
+  border-color: #40407a;
+  font-weight: 500;
+}
+
+header .three a#sign:hover,
+header .three a#sign:focus {
+  color: #182c61;
+  border-color: #182c61;
+}
+
+header .three a#sign::before,
+header .three a#sign::after {
+  display: none;
+}
+
+header .three a#sign svg {
+  width: 25px;
+  margin-right: 5px;
+  fill: currentColor;
+}
+
+#sidebar {
+  width: 18rem;
+  height: 100vh;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-box-shadow: 1px 0 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 1px 0 5px rgba(0, 0, 0, 0.25);
+  font-family: nunito;
+  z-index: 9999;
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+}
+
+#sidebar .top {
+  width: 100%;
+  height: 11rem;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  padding-bottom: 10px;
+  background: #40407a;
+  color: #fff;
+}
+
+#sidebar .top img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+}
+
+#sidebar .top p#userName {
+  margin: 8px 0 3px;
+}
+
+#sidebar .top button {
+  position: absolute;
+  top: 10px;
+  left: 22px;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background: none;
+}
+
+#sidebar .top button svg {
+  width: 50%;
+  fill: #fff;
+}
+
+#sidebar .middle {
+  width: 100%;
+  padding: 5px 0;
+}
+
+#sidebar .middle a {
+  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 24px;
+  height: 40px;
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+#sidebar .middle a:hover {
+  background: #d0d0d0;
+}
+
+#sidebar .middle a.circle img {
+  border-radius: 50%;
+}
+
+#sidebar .middle a svg,
+#sidebar .middle a img {
+  width: 24px;
+  height: 24px;
+  margin-right: 24px;
+}
+
+#sidebar .middle hr {
+  margin: 5px 0;
+}
+
+#sidebar .foot {
+  margin: 5px 0;
+  padding: 0 5px;
+}
+
+#sidebar .foot p {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+main {
+  width: 100%;
+}
+
+#help {
+  width: 100%;
+}
+
+#help form {
+  margin: auto;
+  padding: 1rem;
+  width: 40rem;
+}
+
+#help form label {
+  font-size: 14px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 3px;
+  font-family: ubuntu;
+}
+
+#help form input,
+#help form textarea {
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+  display: block;
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 2px;
+  border: 2px solid #ccc;
+  outline: none;
+  margin-bottom: 1rem;
+  font-family: roboto;
+}
+
+#help form input:focus,
+#help form textarea:focus {
+  border-color: #3949ab;
+}
+
+#help form textarea {
+  min-height: 5rem;
+}
+
+#help form button {
+  margin: 0.7rem 0 1rem;
+  width: 100%;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  background: #3949ab;
+  color: #fff;
+  border: 3px solid #3949ab;
+  -webkit-transition: background-color 0.1s ease;
+  transition: background-color 0.1s ease;
+  outline: none;
+}
+
+#help form button:hover,
+#help form button:focus {
+  background: #303f9f;
+}
+
+footer {
+  width: 100%;
+  background: #182c61;
+  color: #fff;
+  margin-top: auto;
+}
+
+footer .bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+footer .bottom p {
+  font-family: roboto;
+  font-size: 14px;
+}
+
+footer .bottom .connect {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%;
+}
+
+footer .bottom .connect a {
+  text-decoration: none;
+  color: currentColor;
+  margin: 0 10px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+footer .bottom .connect a svg {
+  width: 22px;
+  fill: currentColor;
+}

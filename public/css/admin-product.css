@@ -1,0 +1,373 @@
+@font-face {
+  font-family: roboto;
+  src: url(../fonts/Roboto-Regular.ttf);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: roboto;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+}
+
+body header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 50px;
+  padding: 0 20px;
+  border-bottom: 1px solid #ccc;
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+}
+
+body header a {
+  text-decoration: none;
+  color: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: none;
+}
+
+body header a img {
+  width: 2rem;
+}
+
+body header a span {
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+body header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  height: 100%;
+}
+
+body header nav a {
+  height: 100%;
+  padding: 0 10px;
+  opacity: 0.9;
+}
+
+body header nav a:hover,
+body header nav a:focus {
+  opacity: 1;
+}
+
+body main {
+  width: 100%;
+}
+
+section#product_creation {
+  width: 100%;
+  min-height: 48vh;
+}
+
+section#product_creation .top {
+  width: 100%;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  background: #fff;
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35);
+}
+
+section#product_creation .top button {
+  border: none;
+  outline: none;
+  background: #ffff;
+  padding: 5px 10px;
+  margin: 0 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 0;
+  -webkit-transition: background-color 0.1s ease-in-out;
+  transition: background-color 0.1s ease-in-out;
+  border-bottom: 4px solid transparent;
+}
+
+section#product_creation .top button.active {
+  border-bottom-color: #4040aa;
+}
+
+section#product_creation .top button:hover,
+section#product_creation .top button:focus {
+  background: #4040aa;
+  color: #fff;
+}
+
+section#product_creation .bottom {
+  width: 100%;
+  padding: 0 14rem;
+}
+
+section#product_creation .bottom form {
+  width: 100%;
+  padding: 10px;
+  background: #fff;
+  margin: 10px;
+}
+
+section#product_creation .bottom form .product_box {
+  display: none;
+}
+
+section#product_creation .bottom form .product_box .twin {
+  width: 100%;
+  margin: 10px 0;
+  font-family: roboto;
+  padding: 1rem 0;
+}
+
+section#product_creation .bottom form .product_box .twin:hover {
+  background: rgba(64, 64, 170, 0.2);
+}
+
+section#product_creation .bottom form .product_box .twin:focus-within {
+  background: rgba(64, 64, 170, 0.2);
+}
+
+section#product_creation .bottom form .product_box .twin .left {
+  width: 30%;
+  display: inline-block;
+  text-align: right;
+  height: 100%;
+  padding-right: 10px;
+  vertical-align: baseline;
+}
+
+section#product_creation .bottom form .product_box .twin .left.txtarea {
+  vertical-align: top;
+  padding-top: 8px;
+}
+
+section#product_creation .bottom form .product_box .twin .right {
+  display: inline;
+  width: 70%;
+  height: 100%;
+}
+
+section#product_creation .bottom form .product_box .twin .right label {
+  font-size: 12px;
+  font-weight: 700;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+section#product_creation .bottom form .product_box .twin .right input,
+section#product_creation .bottom form .product_box .twin .right select {
+  border: 1px solid #555;
+  outline: none;
+  border-radius: 2px;
+  padding: 5px;
+  height: 30px;
+  width: 50%;
+  font-family: roboto;
+  margin: 10px 0;
+}
+
+section#product_creation .bottom form .product_box .twin .right textarea {
+  border: 1px solid #555;
+  outline: none;
+  border-radius: 2px;
+  padding: 5px;
+  font-family: roboto;
+  max-width: 50%;
+  min-width: 50%;
+  min-height: 34px;
+}
+
+section#product_creation .bottom form .product_box .twin .btn {
+  padding-top: 1rem;
+  width: 60.8%;
+  margin: auto;
+  display: block;
+  text-align: right;
+}
+
+section#product_creation .bottom form .product_box .twin .btn.multi {
+  padding-top: 5px;
+}
+
+section#product_creation .bottom form .product_box .twin .btn input,
+section#product_creation .bottom form .product_box .twin .btn select {
+  border: 1px solid #555;
+  outline: none;
+  border-radius: 2px;
+  padding: 5px;
+  height: 30px;
+  width: 82.3%;
+  font-family: roboto;
+}
+
+section#product_creation .bottom form .product_box .twin .btn button {
+  cursor: pointer;
+  outline: none;
+  background: #4040aa;
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+  padding: 10px 20px;
+  font-size: 14px;
+}
+
+section#product_creation .bottom form .product_box .twin .btn button:hover {
+  background: #40407a;
+}
+
+section#product_creation .bottom form .images {
+  display: block;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+section#product_creation .bottom form .images .file {
+  width: 15rem;
+  height: 15rem;
+  position: relative;
+  border: 2px dashed #222;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  font-family: roboto;
+}
+
+section#product_creation .bottom form .images .file:hover > svg {
+  fill: #4040aa;
+}
+
+section#product_creation .bottom form .images .file span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  pointer-events: none;
+  opacity: 0;
+}
+
+section#product_creation .bottom form .images .file.data {
+  border-style: solid;
+}
+
+section#product_creation .bottom form .images .file.data img {
+  display: block;
+}
+
+section#product_creation .bottom form .images .file.data svg {
+  display: none;
+}
+
+section#product_creation .bottom form .images .file.data:hover > span {
+  opacity: 1;
+}
+
+section#product_creation .bottom form .images .file input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  opacity: 0;
+  pointer-events: none;
+}
+
+section#product_creation .bottom form .images .file img {
+  width: auto;
+  height: 100%;
+  display: none;
+}
+
+section#product_creation .bottom form .images .file svg {
+  width: 5rem;
+  height: 5rem;
+  margin: 1rem;
+}
+
+section#product_creation .bottom form .sub_btn {
+  margin-top: 1rem;
+  width: 100%;
+  text-align: right;
+  padding: 5px;
+}
+
+section#product_creation .bottom form .sub_btn button {
+  padding: 8px 30px;
+  margin: 0 10px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: 2px;
+  border: 2px solid #ccc;
+  font-size: 16px;
+}
+
+section#product_creation .bottom form .sub_btn button[type="submit"] {
+  border-color: #4040aa;
+  background: #4040aa;
+  color: #fff;
+}

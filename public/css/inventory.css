@@ -1,0 +1,330 @@
+@font-face {
+  font-family: roboto;
+  src: url(../fonts/Roboto-Regular.ttf);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: roboto;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+}
+
+body header {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 50px;
+  padding: 0 20px;
+  border-bottom: 1px solid #ccc;
+  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+}
+
+body header a {
+  text-decoration: none;
+  color: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  outline: none;
+}
+
+body header a img {
+  width: 2rem;
+}
+
+body header a span {
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+body header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  height: 100%;
+}
+
+body header nav a {
+  height: 100%;
+  padding: 0 10px;
+  opacity: 0.9;
+}
+
+body header nav a:hover,
+body header nav a:focus {
+  opacity: 1;
+}
+
+body main {
+  width: 100%;
+}
+
+body main #inventory {
+  width: 100%;
+  padding: 2rem;
+}
+
+body main #inventory .top {
+  margin-bottom: 2rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+body main #inventory .top h1 {
+  font-weight: normal;
+}
+
+body main #inventory .top form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+body main #inventory .top form input {
+  width: 15rem;
+  border: 2px solid #ccc;
+  border-radius: 2px;
+  outline: none;
+  margin-right: 10px;
+  padding: 0 5px;
+  font-size: 14px;
+  height: 40px;
+}
+
+body main #inventory .top form input:focus {
+  border-color: #303f9f;
+}
+
+body main #inventory .top form button {
+  padding: 0 20px;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  background: #3949ab;
+  color: #fff;
+  border: 3px solid #3949ab;
+  -webkit-transition: background-color 0.1s ease;
+  transition: background-color 0.1s ease;
+  outline: none;
+}
+
+body main #inventory .top form button:hover,
+body main #inventory .top form button:focus {
+  background: #303f9f;
+}
+
+body main #inventory .bottom {
+  width: 100%;
+}
+
+body main #inventory .bottom table {
+  width: 100%;
+  border-top: 1px solid #ddd;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body main #inventory .bottom table tr {
+  border-bottom: 1px solid #ddd;
+}
+
+body main #inventory .bottom table tr:nth-child(1) {
+  height: 5rem;
+  background: #eee;
+  font-size: 14px;
+}
+
+body main #inventory .bottom table tr:nth-child(1) th {
+  text-align: left;
+}
+
+body main #inventory .bottom table tr th {
+  padding: 0 20px;
+}
+
+body main #inventory .bottom table tr th:nth-child(1) {
+  text-align: center;
+}
+
+body main #inventory .bottom table tr th:nth-child(2) {
+  max-width: 8rem;
+}
+
+body main #inventory .bottom table tr th:last-child {
+  text-align: center;
+  width: 12rem;
+  padding: 0;
+}
+
+body main #inventory .bottom table tr td {
+  vertical-align: top;
+  padding: 10px 20px;
+}
+
+body main #inventory .bottom table tr td:nth-child(1) {
+  text-align: center;
+}
+
+body main #inventory .bottom table tr td:nth-child(2) {
+  max-width: 25rem;
+}
+
+body main #inventory .bottom table tr td:nth-child(2) a {
+  width: 100%;
+  display: block;
+  height: auto;
+  background: none;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  color: blue;
+  font-size: 16px;
+}
+
+body main #inventory .bottom table tr td:nth-child(2) a:hover,
+body main #inventory .bottom table tr td:nth-child(2) a:focus {
+  background: none;
+  color: blue;
+  text-decoration: underline;
+}
+
+body main #inventory .bottom table tr td:last-child {
+  text-align: center;
+  width: 12rem;
+  padding: 0;
+}
+
+body main #inventory .bottom table tr td a {
+  display: block;
+  height: 34px;
+  margin: 5px 0;
+  padding: 5px;
+  color: #fff;
+  text-decoration: none;
+  background: #3949ab;
+  font-size: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+body main #inventory .bottom table tr td a:nth-child(3) {
+  background: red;
+}
+
+body main #inventory .bottom table tr td a:nth-child(3):hover {
+  background: #e70505;
+}
+
+body main #inventory .bottom table tr td a:hover,
+body main #inventory .bottom table tr td a:focus {
+  background: #303f9f;
+}
+
+body main #inventory .bottom table tr td input.qty {
+  padding: 0 5px;
+  height: 36px;
+  border: 1px solid #ccc;
+  outline: none;
+  border-radius: 2px;
+  width: 10rem;
+}
+
+body main #inventory .bottom table tr td input.qty:focus {
+  border-color: #303f9f;
+}
+
+body main #inventory .bottom table tr td img {
+  width: 4rem;
+}
+
+body main #inventory .bottom table tr td .group {
+  text-align: right;
+}
+
+body main #inventory .bottom table tr td .group:nth-child(1) {
+  margin-bottom: 10px;
+}
+
+body main #inventory .bottom table tr td .group .inp {
+  border-radius: 2px;
+  width: 10rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding-left: 10px;
+}
+
+body main #inventory .bottom table tr td .group .inp:focus-within {
+  border-color: #303f9f;
+}
+
+body main #inventory .bottom table tr td .group .inp svg {
+  width: 10px;
+  fill: #777;
+  margin-right: 5px;
+}
+
+body main #inventory .bottom table tr td .group .inp input {
+  width: 90%;
+  font-size: 16px;
+  padding: 5px;
+  outline: none;
+  border: none;
+}
+/*# sourceMappingURL=inventory.css.map */
