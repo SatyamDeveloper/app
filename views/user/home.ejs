@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koshigo</title>
+  <link rel="shortcut icon" href="/images/fav.png" type="image/x-icon">
+  <link rel="stylesheet" href="/css/home.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+</head>
+
+<body>
+  <div id="wrapper"></div>
+  <%- include('../partials/header.ejs') %>
+    <%- include('../partials/sidebar.ejs') %>
+
+
+      <main>
+        <div class="banner-slider owl-carousel owl-theme">
+          <% for (let i=0; i < websiteDetails.banners.length; i++) { %>
+
+            <div class="slide" style="background-image: url('/uploads/<%= websiteDetails.banners[i] %>')"></div>
+            <% } %>
+
+        </div>
+
+        <section id="product_slider">
+          <h1>Deals of the Day</h1>
+          <div class="product-slider owl-carousel owl-theme">
+            <% products.forEach(product=> { %>
+              <div class="product">
+                <a href="/product/<%= product._id %>" target="_blank" class="product_link">
+                  <div class="img">
+                    <img src="/uploads/<%= product.image[0] %>">
+                  </div>
+                  <h2>
+                    <%= product.title %>
+                  </h2>
+                  <% if (product.rating) { %>
+
+                    <div class="rating">
+                      <div class="rate" data-rate='5'></div>
+                      <svg class="caret" viewBox="0 0 320 512">
+                        <path
+                          d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z" />
+                      </svg>
+                      <span>991</span>
+                    </div>
+                    <% } %>
+                      <p class="price"><span class="one">₹ <%= product.price %></span> <strike class="two">₹<%=
+                            product.mrp %>
+                        </strike> <span class="three">Save
+                          ₹<%= product.mrp - product.price %>
+                            (<%= Math.round((product.mrp - product.price)/product.mrp*100) %>%)</span></p>
+                </a>
+                <a href="/cart/add/<%= product._id %>" class="cart">Add To Cart</a>
+              </div>
+              <% }) %>
+          </div>
+        </section>
+
+        <section id="categories">
+          <h1>Top Categories</h1>
+          <div class="category_area">
+            <% websiteDetails.categories.forEach(category=> { %>
+              <a href="/search/?query=<%= category.name.toLowerCase() %>">
+                <div class="img" style="background-image: url('/uploads/<%= category.pic %>')"></div>
+                <span>
+                  <%= category.name %>
+                </span>
+              </a>
+              <% }) %>
+          </div>
+        </section>
+
+        <section id="products">
+          <h1>Our Products</h1>
+          <div class="product_area">
+            <% products.forEach(product=> { %>
+              <div class="product">
+                <button>
+                  <svg viewBox="0 0 512 512">
+                    <path
+                      d="M458.4 64.3C400.6 15.7 311.3 23 256 79.3 200.7 23 111.4 15.6 53.6 64.3-21.6 127.6-10.6 230.8 43 285.5l175.4 178.7c10 10.2 23.4 15.9 37.6 15.9 14.3 0 27.6-5.6 37.6-15.8L469 285.6c53.5-54.7 64.7-157.9-10.6-221.3zm-23.6 187.5L259.4 430.5c-2.4 2.4-4.4 2.4-6.8 0L77.2 251.8c-36.5-37.2-43.9-107.6 7.3-150.7 38.9-32.7 98.9-27.8 136.5 10.5l35 35.7 35-35.7c37.8-38.5 97.8-43.2 136.5-10.6 51.1 43.1 43.5 113.9 7.3 150.8z" />
+                  </svg>
+                </button>
+                <a href="/product/<%= product._id %>" target="_blank" class="product_link">
+                  <div class="img">
+                    <img src="/uploads/<%= product.image[0] %>">
+                  </div>
+                  <h2>
+                    <%= product.title %>
+                  </h2>
+                  <% if (product.rating) { %>
+
+                    <div class="rating">
+                      <div class="rate" data-rate='5'></div>
+                      <svg class="caret" viewBox="0 0 320 512">
+                        <path
+                          d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z" />
+                      </svg>
+                      <span>991</span>
+                    </div>
+                    <% } %>
+                      <p class="price"><span class="one">₹ <%= product.price %></span> <strike class="two">₹<%=
+                            product.mrp %>
+                        </strike> <span class="three">Save
+                          ₹<%= product.mrp - product.price %>
+                            (<%= Math.round((product.mrp - product.price)/product.mrp*100) %>%)</span></p>
+                </a>
+                <a href="/cart/add/<%= product._id %>" class="cart">Add To Cart</a>
+              </div>
+              <% }) %>
+          </div>
+        </section>
+
+        <section id="find">
+          <h1>Our Presence</h1>
+          <div class="find_area">
+            <a href="<%= websiteDetails.amazon %>" target="_blank" class="amazon"></a>
+            <a href="<%= websiteDetails.flipkart %>" target="_blank" class="flipkart"></a>
+          </div>
+        </section>
+
+        <section id="trust">
+          <a href="#">
+            <img src="/images/secure-pay-icon.png">
+            <h2>100% SECURE PAYMENTS</h2>
+            <P>Moving your card details to a much more secured place</P>
+          </a>
+          <a href="#">
+            <img src="/images/trust-icon.png">
+            <h2>TRUSTPAY</h2>
+            <P>100% Payment Protection. Easy Return Policy</P>
+          </a>
+          <a href="/help" target="_blank">
+            <img src="/images/help-icon.png">
+            <h2>HELP CENTER</h2>
+            <P>Got a question? Look no further. Browse our FAQs or submit your query here.</P>
+          </a>
+        </section>
+      </main>
+
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+      <script src="/js/index.js"></script>
+
+      <script>
+        $(document).ready(function () {
+          $(".banner-slider").owlCarousel({
+            items: 1,
+            loop: true,
+            nav: true,
+            autoplay: true,
+            autoplaySpeed: 1000,
+            smartSpeed: 1000,
+            autoplayHoverPause: true,
+          });
+
+          $(".product-slider").owlCarousel({
+            items: 4,
+            nav: true,
+            navText: ["<svg viewBox='0 0 256 512'><path d='M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z'/></svg>", "<svg viewBox='0 0 256 512'><path d='M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z'/></svg>"],
+            dots: false,
+            smartSpeed: 500,
+            responsive: {
+              0: {
+                items: 1
+              },
+              600: {
+                items: 3
+              },
+              1000: {
+                items: 4
+              }
+            }
+          });
+        });
+      </script>
+      <%- include('../partials/footer.ejs') %>

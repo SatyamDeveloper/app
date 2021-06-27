@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koshigo - Help</title>
+  <link rel="shortcut icon" href="/images/fav.png" type="image/x-icon">
+  <link rel="stylesheet" href="/css/help.css">
+</head>
+
+<body>
+  <div id="wrapper"></div>
+  <%- include('../partials/header') %>
+    <%- include('../partials/sidebar') %>
+      <seaction id="help">
+        <form action="/help/send" method="post">
+          <label for="">Username</label>
+          <input type="text" name="name" placeholder="Enter your name">
+          <label for="">Email</label>
+          <input type="email" name="email" placeholder="Enter your email">
+          <label for="">Problem</label>
+          <input type="text" name="problem" placeholder="Enter your problem">
+          <label for="">Description</label>
+          <textarea name="description" cols="30" rows="10" placeholder="Describe your problem"></textarea>
+          <button type="submit">Send</button>
+        </form>
+        <script src="/js/index.js"></script>
+        <%- include('../partials/footer') %>

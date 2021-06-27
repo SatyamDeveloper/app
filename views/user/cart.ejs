@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koshigo</title>
+  <link rel="shortcut icon" href="/images/fav.png" type="image/x-icon">
+  <link rel="stylesheet" href="/css/cart.css">
+  <link rel="stylesheet" href="/css/banner.css">
+</head>
+
+<body>
+  <div id="wrapper"></div>
+  <%- include('../partials/header') %>
+    <%- include('../partials/sidebar') %>
+
+      <main>
+        <% if (cartQty) { %>
+          <section id="banner">
+            <div class="left">
+              <img src="/images/order-icon.png">
+              <span>Your Cart</span>
+            </div>
+            <div class="right">
+              <span>
+                <%= user.name %>
+              </span>
+              <img src="/uploads/<%= user.profilePic %>">
+            </div>
+          </section>
+          <section id="cart">
+            <div class="left">
+              <p class="key">Price</p>
+              <hr>
+              <% cartItems.forEach(cart=> { %>
+                <div class="cart_item">
+                  <a href="/product/<%= cart._id %>" target="_blank" class="one">
+                    <div class="img">
+                      <img src="/uploads/<%= cart.image[0] %>">
+                    </div>
+                  </a>
+                  <div class="two">
+                    <a href="/product/<%= cart._id %>" target="_blank">
+                      <%= cart.title %>
+                    </a>
+                    <span>by <%= cart.manufacturer %></span>
+                    <div class="tools">
+                      <div class="qty">
+                        <button class="ones">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                            <path
+                              d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
+                          </svg>
+                        </button>
+                        <input type="tel" name="quantity" value="<%= cart.quantity %>">
+                        <button class="twos">
+                          <svg viewBox="0 0 448 512">
+                            <path
+                              d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
+                          </svg>
+                        </button>
+                      </div>
+                      <div class="seperate"></div>
+                      <button class="delete">
+                        <svg viewBox="0 0 448 512">
+                          <path
+                            d="M432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16zM53.2 467a48 48 0 0 0 47.9 45h245.8a48 48 0 0 0 47.9-45L416 128H32z" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="three">
+                    <p>₹ <span>
+                        <%= cart.price %>
+                      </span>
+                    </p>
+                  </div>
+                </div>
+                <% }) %>
+
+            </div>
+            <div class="right">
+              <p>Subtotal (<span>1</span> items): <b>₹<span>650</span>.00</b></p>
+              <button class="one">Proceed to Buy</button>
+              <button class="two">Remove all from Cart</button>
+            </div>
+          </section>
+          <% }else{ %>
+            <section id="no-result">
+              Your cart is currently empty
+              <a href="/">Continue Shopping</a>
+            </section>
+            <% } %>
+              <script>
+                const cartItems = document.querySelectorAll("#cart > div.left > div")
+                const priceLists = document.querySelectorAll("#cart > div.left > div > div.three > p > span")
+                const quantityLists = document.querySelectorAll("#cart > div.left > div > div.two > div > div.qty > input[type=tel]")
+                const priceTotal = document.querySelector("#cart > div.right > p > b > span")
+                const itemTotal = document.querySelector("#cart > div.right > p > span")
+
+                let total = 0;
+
+                for (let a = 0; a < cartItems.length; a++) {
+                  const element = cartItems[a];
+                  let price
+                  let quantity
+
+                  price = Number(priceLists[a].innerText)
+                  quantity = quantityLists[a].value
+
+                  total = total + (price * quantity)
+                }
+
+                priceTotal.innerText = total
+                itemTotal.innerText = cartItems.length
+              </script>
+      </main>
+
+      <script src="/js/index.js"></script>
+      <%- include('../partials/footer') %>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koshigo</title>
+  <link rel="shortcut icon" href="/images/fav.png" type="image/x-icon">
+  <link rel="stylesheet" href="/css/account.css">
+</head>
+
+<body>
+  <div id="wrapper"></div>
+  <%- include('../partials/header') %>
+    <%- include('../partials/sidebar') %>
+
+      <main>
+        <section id="data">
+          <img src="/uploads/<%= user.profilePic%>">
+          <h2>
+            <%= user.name%>
+          </h2>
+          <p>
+            <%= user.email %>
+          </p>
+        </section>
+        <section id="account">
+          <h1>Your Account</h1>
+          <div class="account_area">
+            <a href="#" class="box">
+              <img src="/images/box-icon.png">
+              <div class="right">
+                <p class="head">Your Orders</p>
+                <p class="txt">Track and buy things again</p>
+              </div>
+            </a>
+            <a href="#" class="box">
+              <img src="/images/lock-icon.png">
+              <div class="right">
+                <p class="head">Login & security</p>
+                <p class="txt">Edit login, name, and mobile number</p>
+              </div>
+            </a>
+            <a href="#" class="box">
+              <img src="/images/address-icon.png">
+              <div class="right">
+                <p class="head">Your Addresses</p>
+                <p class="txt">Edit, add or remove addresses for orders</p>
+              </div>
+            </a>
+            <a href="#" class="box">
+              <img src="/images/payment-icon.png">
+              <div class="right">
+                <p class="head">Payment options</p>
+                <p class="txt">Edit or add payment methods</p>
+              </div>
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <script src="/js/index.js"></script>
+      <%- include('../partials/footer') %>
