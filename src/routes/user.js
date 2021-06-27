@@ -24,7 +24,7 @@ const page = (filePath) => {
       const cartQty = req.rootUser?.carts?.length
       const user = req.rootUser
       const websiteDetails = await Admin.findOne({ email: process.env.EMAIL })
-      const products = await Product.find().sort({ createdAt: 'desc' })
+      const products = await Product.find()
       res.render(filePath, { user, cartQty, websiteDetails, products, searchQuery })
     } catch (error) {
       console.log(error);
