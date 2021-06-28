@@ -559,14 +559,16 @@ main {
   right: 1%;
 }
 
-section#products {
+section#products,
+section#contact {
   width: 100%;
   margin: 1rem 0;
   padding: 1rem;
   font-family: raleway;
 }
 
-section#products h1 {
+section#products h1,
+section#contact h1 {
   display: block;
   text-align: center;
   position: relative;
@@ -576,7 +578,8 @@ section#products h1 {
   margin-bottom: 1rem;
 }
 
-section#products h1::before {
+section#products h1::before,
+section#contact h1::before {
   position: absolute;
   width: 8%;
   content: "";
@@ -587,7 +590,8 @@ section#products h1::before {
   border-bottom: 2px solid red;
 }
 
-section#products .product_area {
+section#products .product_area,
+section#contact .contact_area {
   margin-top: 2rem;
   width: 100%;
   display: -webkit-box;
@@ -597,8 +601,73 @@ section#products .product_area {
   flex-wrap: wrap;
 }
 
+section#contact .contact_area .left {
+  background: #fff;
+  padding: 1rem;
+  width: 50%;
+}
+
+section#contact .contact_area .left label,
+section#contact .contact_area .left input,
+section#contact .contact_area .left textarea,
+section#contact .contact_area .left button {
+  width: 80%;
+  display: block;
+  text-align: left;
+}
+
+section#contact .contact_area .left label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+section#contact .contact_area .left button {
+  text-align: right;
+  width: max-content;
+  padding: 5px 2rem;
+  height: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 16px;
+  background: #3949ab;
+  color: #fff;
+  border: 3px solid #3949ab;
+  -webkit-transition: background-color 0.1s ease;
+  transition: background-color 0.1s ease;
+  outline: none;
+}
+
+section#contact .contact_area .left button:hover {
+  background: #303f9f;
+}
+
+section#contact .contact_area .left input,
+section#contact .contact_area .left textarea {
+  margin-bottom: 1rem;
+  padding: 5px;
+  font-size: 16px;
+}
+
+section#contact .contact_area .right {
+  width: 50%;
+}
+
+section#contact .contact_area .right iframe {
+  width: 100%;
+  height: 100%;
+}
+
 section#products .product_area .product {
-  margin: 10px 9px;
+  margin: 10px 8px;
   width: 22rem;
   background: #fff;
   position: relative;
