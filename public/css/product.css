@@ -540,7 +540,8 @@ section#product_page
   .left
   .product_all_images
   .main_product_image {
-  width: 100%;
+  overflow: hidden;
+  width: 34rem;
   height: 88%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -559,8 +560,8 @@ section#product_page
   .product_all_images
   .main_product_image
   img {
-  height: 100%;
-  width: auto;
+  height: auto;
+  width: 90%;
   margin: auto;
 }
 
