@@ -786,8 +786,8 @@ section#products .product_area .product a.product_link .img {
 }
 
 section#products .product_area .product a.product_link .img img {
-  height: 100%;
-  width: auto;
+  height: auto;
+  width: 90%;
 }
 
 section#products .product_area .product a.product_link img {
