@@ -15,6 +15,9 @@ app.set('view engine', 'ejs')
 
 app.use(express.static(require('path').join(__dirname, '../public')))
 
+app.get('/sitemap',(req,res)=>{
+  res.render('sitemap.xml');
+})
 app.use(user)
 app.use('/admin', admin)
 
