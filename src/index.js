@@ -17,7 +17,7 @@ app.use(express.static(require('path').join(__dirname, '../public')))
 
 app.get('/sitemap',(req,res)=>{
  res.set('Content-Type', 'application/rss+xml');
-res.send('sitemap.xml');
+res.render('sitemap.xml');
 })
 app.use(user)
 app.use('/admin', admin)
